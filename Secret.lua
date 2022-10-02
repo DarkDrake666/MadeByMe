@@ -1,4 +1,3 @@
-function b()
 local ChildDectactable, IsOver13, HasSaidMessage = true, false, false
 game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("Chat"):WaitForChild("Frame"):WaitForChild("ChatChannelParentFrame"):WaitForChild("Frame_MessageLogDisplay"):WaitForChild("Scroller").ChildAdded:Connect(function(child)
     if ChildDectactable == true then
@@ -57,5 +56,6 @@ print("Loaded!")
 wait(1)
 
 game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("C7RN", "All")
-end
-return b
+
+repeat task.wait() until IsOver13 == true
+return true
