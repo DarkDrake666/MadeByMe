@@ -1,4 +1,4 @@
-local ChildDectactable, IsOver13, HasSaidMessage = true, false, false
+local ChildDectactable, HasSaidMessage = true, false
 game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("Chat"):WaitForChild("Frame"):WaitForChild("ChatChannelParentFrame"):WaitForChild("Frame_MessageLogDisplay"):WaitForChild("Scroller").ChildAdded:Connect(function(child)
     if ChildDectactable == true then
         if HasSaidMessage == true then
@@ -34,7 +34,7 @@ game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("C
                     end
                 else
                     -- Wrong Player Found
-                    print("Wrong player")
+                    print("Wrong player ("..string.sub(child.TextLabel.TextButton.Text, 2, -3))
                 end
             else
                 -- Invalid child (Probably starter message or system message.)
@@ -56,6 +56,3 @@ print("Loaded!")
 wait(1)
 
 game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("C7RN", "All")
-
-repeat task.wait() until IsOver13 == true
-return true
