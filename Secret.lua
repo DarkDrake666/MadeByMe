@@ -4,11 +4,10 @@ game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("C
         if HasSaidMessage == true then
             child:WaitForChild("TextLabel")
             if tostring(child.Name) == "Frame" and child:FindFirstChild("TextLabel") and child:FindFirstChild("TextLabel"):FindFirstChild("TextButton") then
-                local length = string.len(game:GetService("Players").LocalPlayer.DisplayName) + 10
+                local _, length = string.find(child.TextLabel.Text, "^%s+")
                 if string.find(child.TextLabel.TextButton.Text, game:GetService("Players").LocalPlayer.DisplayName) or string.find(child.TextLabel.TextButton.Text, game:GetService("Players").LocalPlayer.Name) then
                     -- Message found
-                    local length2 = length + 34 - 9
-                    local msg = string.sub(child.TextLabel.Text, length2, -1)
+                    local msg = string.sub(child.TextLabel.Text, length, -1)
                     local msg2 = string.gsub(child.TextLabel.Text, " ", "")
                     if string.len(msg2) == 4 then
                         if msg2 == "####" then
