@@ -8,7 +8,7 @@ local teleported = false
 local teleportfunc = game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
     if (not teleported) then
         teleported = true
-		  syn.queue_on_teleport("getgenv().executed = false; loadstring(game:HttpGet('https://raw.githubusercontent.com/DarkDrake666/MadeByMe/blob/main/DigToChinaPoints.lua")
+		  syn.queue_on_teleport("getgenv().executed = false; loadstring(game:HttpGet('https://raw.githubusercontent.com/DarkDrake666/MadeByMe/main/DigToChinaPoints.lua")
     end
 end)
 
